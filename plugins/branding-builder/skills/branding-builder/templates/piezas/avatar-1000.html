@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="lienzo" content="1000x1000">
+<!-- Plantilla de ESTRUCTURA: foto de perfil 1000×1000. Las redes la recortan en círculo:
+     el símbolo debe caber holgado en el círculo inscrito (≈ 60% del ancho). Un render por fondo: ?tema=<id> ?guias=1 -->
+<link rel="stylesheet" href="brand.css">
+<style>
+html, body { margin: 0; }
+.lienzo { width: 1000px; height: 1000px; display: grid; place-items: center; background: var(--bg); position: relative; }
+.lienzo img { width: 60%; height: 60%; object-fit: contain; display: block; }
+.guias .lienzo::after { content: ""; position: absolute; inset: 0; border-radius: 50%; outline: 3px dashed #f0f; outline-offset: -3px; }
+</style>
+</head>
+<body>
+<div class="lienzo"><img src="logo.svg" alt=""></div>
+<script>
+const q = new URLSearchParams(location.search);
+if (q.get("guias")) document.documentElement.classList.add("guias");
+if (q.get("tema")) document.documentElement.dataset.theme = q.get("tema");
+</script>
+</body>
+</html>

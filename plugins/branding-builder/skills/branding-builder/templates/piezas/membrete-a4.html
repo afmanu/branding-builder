@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Plantilla de ESTRUCTURA: membrete A4 para PDF (render.py pdf membrete-a4.html SIGLA-membrete-A4.pdf).
+     Márgenes de 20 mm; cabecera con logo y pie con datos. El texto del cuerpo es de ejemplo. -->
+<link rel="stylesheet" href="brand.css">
+<style>
+@page { size: A4; margin: 0; }
+html, body { margin: 0; }
+.hoja { width: 210mm; height: 297mm; box-sizing: border-box; padding: 20mm; position: relative; background: #fff; color: var(--ink); display: flex; flex-direction: column; }
+.cabecera { display: flex; justify-content: space-between; align-items: flex-start; }
+.cabecera img { height: 14mm; display: block; }
+:where(.ref) { font-family: var(--font-mono); font-size: 8pt; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); text-align: right; }
+.cuerpo { flex: 1; padding-top: 24mm; }
+:where(.cuerpo) { font-family: var(--font-sans); font-size: 11pt; line-height: 1.5; }
+.cuerpo p { margin: 0 0 4mm; }
+.pie { border-top: .3mm solid var(--border); padding-top: 4mm; display: flex; justify-content: space-between; }
+:where(.pie) { font-family: var(--font-sans); font-size: 8pt; color: var(--ink-muted); }
+.motivo { position: absolute; top: 0; right: 0; width: 12mm; height: 100%; background-image: url("patron.svg"); }
+</style>
+</head>
+<body>
+<div class="hoja">
+  <div class="motivo" aria-hidden="true"></div>
+  <div class="cabecera">
+    <img src="logo.svg" alt="">
+    <div class="ref" data-ejemplo>Madrid · 1 de enero de 2027</div>
+  </div>
+  <div class="cuerpo" data-ejemplo>
+    <p>Estimada señora:</p>
+    <p>Este párrafo es texto de ejemplo para comprobar el tamaño, el interlineado y los márgenes del membrete.</p>
+    <p>Atentamente,</p>
+  </div>
+  <div class="pie" data-ejemplo>
+    <span>Nombre de la empresa · Calle Ejemplo 1, 28001 Madrid</span>
+    <span>ejemplo.com · hola@ejemplo.com</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="lienzo" content="600x180">
+<!-- Plantilla de ESTRUCTURA: firma de email.
+     IMPORTANTE: los clientes de correo no leen variables CSS ni fuentes web. Sustituye cada color por su HEX
+     (#111111 = ink, #666666 = ink-muted, #dddddd = border) y deja una pila de fuentes del sistema.
+     El logo debe ir como PNG alojado en una URL pública (los SVG no se ven en muchos clientes).
+     El HTML de la tabla (desde <table> hasta </table>) es lo que se pega en el gestor de correo;
+     cópialo en un bloque de código dentro del README del grupo Papeleria. Render: render.py png firma-email.html firma-email_600x180.png -->
+<style>html, body { margin: 0; background: #ffffff; }</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" border="0" style="width:600px;font-family:Arial,Helvetica,sans-serif;color:#111111;">
+  <tr>
+    <td style="padding:24px 24px 24px 0;width:140px;vertical-align:top;border-right:1px solid #dddddd;">
+      <img src="logo.png" alt="Marca" width="120" style="display:block;width:120px;height:auto;border:0;">
+    </td>
+    <td style="padding:24px 0 24px 24px;vertical-align:top;">
+      <div style="font-size:16px;font-weight:bold;line-height:1.3;">Nombre Apellido</div>
+      <div style="font-size:13px;color:#666666;line-height:1.4;">Cargo · Nombre de la empresa</div>
+      <div style="font-size:12px;line-height:1.6;padding-top:8px;">
+        <a href="mailto:nombre@ejemplo.com" style="color:#111111;text-decoration:none;">nombre@ejemplo.com</a> ·
+        <a href="https://ejemplo.com" style="color:#111111;text-decoration:none;">ejemplo.com</a> · +34 600 000 000
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

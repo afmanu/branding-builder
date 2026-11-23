@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="lienzo" content="1080x1080">
+<!-- Plantilla de ESTRUCTURA (no de estilo): post 1080×1080. Los tamaños son de lienzo, no la escala de pantalla del README.
+     Copia a editables/, genera brand.css al lado con tokens_css.py, copia logo.svg (y patron.svg si hay)
+     y cambia textos y composición según la marca. Parámetros: ?tema=<id> ?guias=1 -->
+<link rel="stylesheet" href="brand.css">
+<style>
+html, body { margin: 0; }
+.lienzo { position: relative; width: 1080px; height: 1080px; overflow: hidden; background: var(--bg); color: var(--ink); }
+.seguro { position: absolute; inset: 80px; display: flex; flex-direction: column; justify-content: space-between; }
+.etiqueta { font-family: var(--font-mono); font-size: 28px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.titular { font-family: var(--font-display); font-weight: 700; font-size: 96px; line-height: .95; letter-spacing: -.03em; }
+.titular { margin: 0; max-width: 860px; }
+.pie { display: flex; justify-content: space-between; align-items: flex-end; }
+.pie img { height: 96px; display: block; }
+.pie span { font-family: var(--font-sans); font-size: 26px; color: var(--ink-muted); }
+/* Zona del elemento gráfico: un lateral o un tercio, nunca detrás del texto ni del logo */
+.motivo { position: absolute; top: 0; right: 0; width: 300px; height: 100%; background-image: url("patron.svg"); }
+.guias .seguro { outline: 2px dashed #f0f; }
+.guias .motivo { outline: 2px dashed #0bf; }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="motivo" aria-hidden="true"></div>
+  <div class="seguro">
+    <div class="etiqueta" data-ejemplo>CATEGORÍA · #01</div>
+    <h1 class="titular" data-ejemplo>Un titular de ejemplo en dos o tres líneas.</h1>
+    <div class="pie"><img src="logo.svg" alt=""><span data-ejemplo>@cuenta</span></div>
+  </div>
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+if (q.get("guias")) document.documentElement.classList.add("guias");
+if (q.get("tema")) document.documentElement.dataset.theme = q.get("tema");
+</script>
+</body>
+</html>

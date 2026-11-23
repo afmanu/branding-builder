@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Plantilla de ESTRUCTURA: escenas de mockup sencillas y limpias. Elige la escena con ?escena=
+       tarjetas   1600×1200  usa tarjeta-anverso.png y tarjeta-reverso.png (los renders de la tarjeta)
+       pegatinas  1600×1200  usa logo.svg sobre los fondos de marca
+       movil      1200×1600  perfil de red en un móvil: cabecera.png, avatar.png, post-1.png … post-6.png
+     Render: render.py png mockups.html mockup-tarjetas_1600x1200.png --param escena=tarjetas
+     Un mockup enseña una aplicación; no demuestra eficacia. ?tema=<id> -->
+<link rel="stylesheet" href="brand.css">
+<style>
+html, body { margin: 0; }
+.escena { display: none; position: relative; overflow: hidden; }
+.e-tarjetas .tarjetas, .e-pegatinas .pegatinas, .e-movil .movil { display: block; }
+/* Mesa neutra: no compite con la marca */
+.tarjetas, .pegatinas { width: 1600px; height: 1200px; background: #e9e7e2; }
+.tarjetas img { position: absolute; width: 760px; box-shadow: 0 30px 60px rgba(0,0,0,.22), 0 6px 12px rgba(0,0,0,.12); border-radius: 6px; }
+.tarjetas .t1 { left: 230px; top: 330px; transform: rotate(-8deg); }
+.tarjetas .t2 { left: 640px; top: 480px; transform: rotate(5deg); }
+.pegatinas .p { position: absolute; display: grid; place-items: center; box-shadow: 0 18px 36px rgba(0,0,0,.18); }
+.pegatinas .p img { width: 58%; height: 58%; object-fit: contain; }
+.pegatinas .p1 { left: 260px; top: 300px; width: 420px; height: 420px; border-radius: 50%; background: var(--bg); transform: rotate(-6deg); }
+.pegatinas .p2 { left: 760px; top: 240px; width: 520px; height: 340px; border-radius: 48px; background: var(--action); transform: rotate(4deg); }
+.pegatinas .p3 { left: 820px; top: 650px; width: 360px; height: 360px; border-radius: 50%; background: var(--surface); transform: rotate(9deg); }
+.movil { width: 1200px; height: 1600px; background: #e9e7e2; }
+.telefono { position: absolute; left: 270px; top: 90px; width: 660px; height: 1420px; border-radius: 88px; background: #111; padding: 22px; box-sizing: border-box; box-shadow: 0 40px 80px rgba(0,0,0,.25); }
+.pantalla { width: 100%; height: 100%; border-radius: 68px; overflow: hidden; background: #fff; font-family: system-ui, sans-serif; color: #111; }
+.pantalla .cab { height: 210px; background: var(--bg) center/cover no-repeat url("cabecera.png"); }
+.pantalla .av { width: 150px; height: 150px; border-radius: 50%; border: 6px solid #fff; margin: -75px 0 0 36px; background: center/cover url("avatar.png"); }
+.pantalla .nom { padding: 16px 36px 0; font-weight: 700; font-size: 32px; }
+.pantalla .bio { padding: 8px 36px 24px; font-size: 22px; color: #555; line-height: 1.35; }
+.pantalla .rejilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.pantalla .rejilla div { aspect-ratio: 1; background: #ddd center/cover no-repeat; }
+</style>
+</head>
+<body>
+<div class="escena tarjetas"><img class="t1" src="tarjeta-reverso.png" alt=""><img class="t2" src="tarjeta-anverso.png" alt=""></div>
+<div class="escena pegatinas">
+  <div class="p p1"><img src="logo.svg" alt=""></div>
+  <div class="p p2"><img src="logo-negativo.svg" alt=""></div>
+  <div class="p p3"><img src="logo.svg" alt=""></div>
+</div>
+<div class="escena movil">
+  <div class="telefono"><div class="pantalla">
+    <div class="cab"></div><div class="av"></div>
+    <div class="nom" data-ejemplo>Nombre de la marca</div>
+    <div class="bio" data-ejemplo>Bio de ejemplo en una o dos líneas.</div>
+    <div class="rejilla">
+      <div style="background-image:url(post-1.png)"></div><div style="background-image:url(post-2.png)"></div><div style="background-image:url(post-3.png)"></div>
+      <div style="background-image:url(post-4.png)"></div><div style="background-image:url(post-5.png)"></div><div style="background-image:url(post-6.png)"></div>
+    </div>
+  </div></div>
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+document.body.classList.add("e-" + (q.get("escena") || "tarjetas"));
+if (q.get("tema")) document.documentElement.dataset.theme = q.get("tema");
+</script>
+</body>
+</html>

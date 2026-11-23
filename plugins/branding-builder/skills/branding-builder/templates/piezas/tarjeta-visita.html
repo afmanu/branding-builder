@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="lienzo" content="1063x638">
+<!-- Plantilla de ESTRUCTURA: tarjeta de visita 90×54 mm a 300 ppp (1063×638 px). ?cara=anverso|reverso ?tema=<id> ?guias=1
+     Margen de seguridad 5 mm (59 px). Para imprenta, pide además sangrado de 3 mm y PDF: confírmalo con la imprenta.
+     Datos de ejemplo marcados con data-ejemplo. -->
+<link rel="stylesheet" href="brand.css">
+<style>
+html, body { margin: 0; }
+.lienzo { position: relative; width: 1063px; height: 638px; overflow: hidden; background: var(--bg); color: var(--ink); }
+.seguro { position: absolute; inset: 59px; display: flex; flex-direction: column; justify-content: space-between; }
+.cara { display: none; }
+.anverso .cara-anverso, .reverso .cara-reverso { display: contents; }
+.cara-reverso .centro { position: absolute; top: 0; bottom: 0; left: 28%; right: 0; display: grid; place-items: center; }
+.cara-reverso .centro img { width: 52%; max-height: 52%; object-fit: contain; }
+.logo { height: 64px; display: block; }
+:where(.nombre) { font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.05; }
+.nombre { margin: 0; }
+:where(.cargo) { font-family: var(--font-sans); font-size: 24px; color: var(--ink-muted); }
+.cargo { margin: 6px 0 0; }
+:where(.datos) { font-family: var(--font-mono); font-size: 20px; line-height: 1.6; letter-spacing: .02em; }
+.motivo { position: absolute; top: 0; bottom: 0; left: 0; width: 28%; background-image: url("patron.svg"); }  /* franja lateral: nunca detrás del logo */
+.guias .seguro { outline: 2px dashed #f0f; }
+</style>
+</head>
+<body>
+<div class="lienzo">
+  <div class="cara cara-anverso">
+    <div class="seguro">
+      <img class="logo" src="logo.svg" alt="">
+      <div>
+        <h1 class="nombre" data-ejemplo>Nombre Apellido</h1>
+        <p class="cargo" data-ejemplo>Cargo</p>
+      </div>
+      <div class="datos" data-ejemplo>nombre@ejemplo.com<br>+34 600 000 000<br>ejemplo.com</div>
+    </div>
+  </div>
+  <div class="cara cara-reverso">
+    <div class="motivo" aria-hidden="true"></div>
+    <div class="centro"><img src="logo.svg" alt=""></div>
+  </div>
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+document.querySelector(".lienzo").classList.add(q.get("cara") === "reverso" ? "reverso" : "anverso");
+if (q.get("guias")) document.documentElement.classList.add("guias");
+if (q.get("tema")) document.documentElement.dataset.theme = q.get("tema");
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="lienzo" content="1920x1080">
+<!-- Plantilla de ESTRUCTURA: lámina para comparar rutas visuales (o variantes del símbolo).
+     Haz una copia por ruta con EXACTAMENTE el mismo formato: ninguna más desarrollada que las otras.
+     Cada ruta tiene su propia paleta y fuentes, así que NO usa brand.css: rellena el bloque :root de abajo.
+     simbolo.svg = boceto del símbolo · aplicacion.png = una pieza de ejemplo (avatar, post…). -->
+<style>
+:root {
+  --bg: #f4f2ee; --ink: #151515; --ink-muted: #5f5f5f; --border: #d9d6cf;
+  --c1: #151515; --c2: #f4f2ee; --c3: #8a8a8a; --c4: #d9d6cf; --c5: #3a3a3a;
+  --font-display: system-ui, sans-serif; --font-sans: system-ui, sans-serif; --font-mono: ui-monospace, monospace;
+}
+/* @font-face de las fuentes de esta ruta aquí */
+html, body { margin: 0; }
+.lamina { width: 1920px; height: 1080px; display: grid; grid-template-columns: 960px 1fr; background: var(--bg); color: var(--ink); font-family: var(--font-sans); }
+.simbolo { display: grid; place-items: center; border-right: 1px solid var(--border); position: relative; }
+.simbolo img { width: 58%; max-height: 58%; object-fit: contain; }
+.etiqueta { position: absolute; top: 64px; left: 64px; font-family: var(--font-mono); font-size: 22px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.datos { padding: 64px; display: flex; flex-direction: column; gap: 36px; }
+h1 { margin: 0; font-family: var(--font-display); font-size: 64px; line-height: 1; letter-spacing: -.02em; }
+dl { margin: 0; display: grid; grid-template-columns: 200px 1fr; gap: 10px 24px; font-size: 22px; line-height: 1.4; }
+dt { font-family: var(--font-mono); font-size: 16px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); padding-top: 4px; }
+dd { margin: 0; }
+.paleta { display: flex; gap: 12px; }
+.paleta div { flex: 1; height: 88px; border-radius: 8px; border: 1px solid var(--border); }
+.tipos { display: flex; gap: 48px; align-items: baseline; }
+.tipos .d { font-family: var(--font-display); font-size: 56px; font-weight: 700; }
+.tipos .s { font-family: var(--font-sans); font-size: 22px; color: var(--ink-muted); max-width: 420px; }
+.aplicacion { flex: 1; display: flex; gap: 24px; min-height: 0; }
+.aplicacion img { height: 100%; max-height: 260px; border-radius: 8px; border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="lamina">
+  <div class="simbolo">
+    <div class="etiqueta">RUTA A</div>
+    <img src="simbolo.svg" alt="">
+  </div>
+  <div class="datos">
+    <h1>Nombre de la ruta</h1>
+    <dl>
+      <dt>Concepto</dt><dd>La idea en una frase.</dd>
+      <dt>Mecanismo</dt><dd>La regla formal que produce las formas (de aquí sale la regla geométrica).</dd>
+      <dt>Criterio</dt><dd>El criterio de la plataforma al que responde.</dd>
+      <dt>Toma / evita</dt><dd>Qué toma de las referencias y qué evita.</dd>
+      <dt>Riesgo</dt><dd>Cómo podría malinterpretarse.</dd>
+    </dl>
+    <div class="paleta"><div style="background:var(--c1)"></div><div style="background:var(--c2)"></div><div style="background:var(--c3)"></div><div style="background:var(--c4)"></div><div style="background:var(--c5)"></div></div>
+    <div class="tipos"><span class="d">Aa Titular</span><span class="s">Texto de muestra con la fuente de lectura propuesta para esta ruta.</span></div>
+    <div class="aplicacion"><img src="aplicacion.png" alt=""></div>
+  </div>
+</div>
+</body>
+</html>
