@@ -36,7 +36,7 @@ RANGOS = {
     "Banners": [r"^YouTube-banner", r"^X-cabecera", r"^LinkedIn-perfil", r"^LinkedIn-pagina", r"^Facebook-portada",
                 r"^Facebook-grupo", r"^Bluesky-", r"^Twitch-", r"^Discord-", r"^Skool-", r"^Whop-", r"^Pinterest-",
                 r"^Newsletter-"],
-    "Patrones": [r"-patron-(?!logos).+\.svg$", r"-patron-(?!logos).+_\d+\.png$", r"-patron-logos-"],
+    "Patrones": [r"-patron-(?!logos).+\.svg$", r"-patron-(?!logos).+_\d+\.png$", r"-patron-logos-", r"-fondo-.+_1920x1080\.png$"],
     "Mockups": [r"^mockup-", r"^tarjeta-visita-anverso", r"^tarjeta-visita-reverso"],
     "Manual": [r"\.pdf$"],
     "OnePager": [r"\.pdf$", r"\.png$"],

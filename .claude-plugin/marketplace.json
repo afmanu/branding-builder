@@ -9,7 +9,7 @@
     {
       "name": "branding-builder",
       "source": "./plugins/branding-builder",
-      "description": "Crea o renueva la marca de una empresa con método de agencia y la entrega como Design System con logo, color, tipografía, voz, iconos, one pager, redes y banners de perfil (si la marca los necesita), mockups y manual PDF.",
+      "description": "Crea o renueva la marca de una empresa con método de agencia y la entrega como Design System con logo, color, tipografía, voz, iconos, papelería, presentación, one pager, componentes, fondos, redes y banners según las preguntas de arranque, mockups y manual PDF.",
       "category": "design",
       "tags": [
         "branding",

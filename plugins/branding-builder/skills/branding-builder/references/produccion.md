@@ -10,8 +10,8 @@ En los comandos, `$S` = la carpeta `scripts/` de esta skill y `$T` = `templates/
   project/
     README.md  plataforma.md  decisiones.md  tokens.json  design-system.json
     fonts/
-    components/Cover/preview.html
-    assets/Logos/  Iconos/  [Redes/  Banners/]  Patrones/  Mockups/  Manual/  OnePager/  [Papeleria/  Presentaciones/]
+    components/Cover/preview.html  components/<Comp>/  components/bundle.css
+    assets/Logos/  Iconos/  [Redes/  Banners/]  Patrones/  Mockups/  Manual/  OnePager/  Papeleria/  Presentaciones/
   editables/   copias de las plantillas, brand.css, logo.svg, patron.svg y el HTML/SVG de cada pieza
   extra/       favicon.ico, <SIGLA>-brand-kit.zip, renders auxiliares
 ```
@@ -39,7 +39,10 @@ En los comandos, `$S` = la carpeta `scripts/` de esta skill y `$T` = `templates/
 9. **Mockups:** `mockups.html` con `?escena=tarjetas|pegatinas|movil`, usando los renders de la tarjeta y de las piezas como imágenes.
 10. **Manual PDF:** copia `manual.html`, duplica los tipos de página que necesites con el mismo contenido que el README y `python3 $S/render.py pdf editables/manual.html project/assets/Manual/SIGLA-Manual-de-Marca.pdf`. Revisa las páginas (p. ej. `pdftoppm -r 30 -png` si está, o la vista previa del PDF).
 11. **One pager** (siempre): copia `one-pager.html`, rellénalo con la plataforma (titular con la promesa, relato corto, 3 pasos de cómo trabaja, para quién, qué se lleva el cliente y una llamada a la acción) y adapta la composición a la marca; el motivo va en una franja, nunca detrás del texto. `python3 $S/render.py pdf editables/one-pager.html project/assets/OnePager/SIGLA-one-pager-A4.pdf` y `python3 $S/render.py png editables/one-pager.html project/assets/OnePager/SIGLA-one-pager-A4_794x1123.png`. Revisa la vista previa (Read): todo en una cara, nada cortado.
-12. **Papelería:** `membrete-a4.html` → PDF con `render.py pdf`; `firma-email.html` con colores en HEX y estilos en línea (los clientes de correo no leen variables CSS ni fuentes web), logo en PNG alojado en una URL pública.
+12. **Papelería** (base): `membrete-a4.html` → PDF con `render.py pdf`; `firma-email.html` con colores en HEX y estilos en línea (los clientes de correo no leen variables CSS ni fuentes web), logo en PNG alojado en una URL pública.
+13. **Presentación** (base): portada, separador y diapositiva de contenido 16:9 a 1920×1080, en PNG y en un PDF con todas.
+14. **Fondos 1920×1080** (base): al menos uno claro y uno oscuro, con el patrón o el motivo del logo en una zona y espacio limpio para texto o vídeo, en `Patrones/SIGLA-fondo-<nombre>-<fondo>_1920x1080.png`.
+15. **Componentes UI** (base): botón, etiqueta, tarjeta y campo en `components/<Comp>/` con `preview.html` y `README.md`, y `components/bundle.css` generado desde los tokens.
 
 ## Reglas
 
