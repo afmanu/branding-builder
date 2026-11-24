@@ -38,6 +38,7 @@ Todo se descarga desde **Assets**: abre el grupo y descarga el archivo que neces
 - **Foto de perfil:** `Redes/avatar-*.png`.
 - **Icono de app y favicon:** `Iconos/`. El `favicon.ico` está en el ZIP del kit.
 - **Piezas de redes:** `Redes/`, al tamaño exacto de cada plataforma. Sus editables (HTML/SVG) están en el ZIP, carpeta `editables/`.
+- **Banners de perfil:** `Banners/`, uno por perfil (<redes>), listos para subir. Para cambiar el texto, `editables/banner.html?f=<red>` en el ZIP.
 - **Manual completo:** `Manual/<SIGLA>-Manual-de-Marca.pdf`.
 - **Colores y tipografías:** en **Colors** y **Typography**. Las fuentes <nombres> <dónde se consiguen y su licencia>.
 
@@ -77,3 +78,13 @@ Para interfaces usa los tokens semánticos (`bg`, `surface`, `ink`, `ink-muted`,
 - **Manual** (`assets/Manual/`): PDF de <n> páginas.
 
 Margen de seguridad en posts: 80 px en lienzo de 1080. Botones en `action` con texto en `on-action`.
+
+## Banners de perfil
+
+<Regla de composición común: dónde va el contenido, qué llena el resto del lienzo, qué motivo lo acompaña y qué texto lleva (lockup, una frase, un dato estable).>
+
+| Red | Archivo | Tamaño | Qué evitar |
+|---|---|---|---|
+| <Red> | `<Archivo>_<W>x<H>.png` | <W×H> | <lo que tapa la foto de perfil o el logo, lo que recorta el móvil> |
+
+<Medidas por verificar en la plataforma, si las hay. Las redes cambian sus medidas: comprueba la pantalla de subida antes de cambiar un banner.>

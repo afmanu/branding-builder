@@ -1,7 +1,7 @@
 {
   "name": "branding-builder",
-  "version": "0.1.0",
-  "description": "Crea o renueva la marca de una empresa con método de agencia (estrategia, rutas e identidad) y la entrega como Design System con logo, color, tipografía, voz, iconos, redes, mockups y manual PDF. Incluye scripts, plantillas y agentes de investigación y revisión.",
+  "version": "0.2.0",
+  "description": "Crea o renueva la marca de una empresa con método de agencia (estrategia, rutas e identidad) y la entrega como Design System con logo, color, tipografía, voz, iconos, redes, banners de perfil, mockups y manual PDF. Incluye scripts, plantillas y agentes de investigación y revisión.",
   "author": {
     "name": "Manuel Álvarez"
   },
@@ -12,8 +12,5 @@
     "design system",
     "manual de marca",
     "naming"
-  ],
-  "license": "MIT",
-  "repository": "https://github.com/afmanu/branding-builder",
-  "homepage": "https://github.com/afmanu/branding-builder"
+  ]
 }

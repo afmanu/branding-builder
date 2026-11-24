@@ -9,7 +9,7 @@
     {
       "name": "branding-builder",
       "source": "./plugins/branding-builder",
-      "description": "Crea o renueva la marca de una empresa con método de agencia y la entrega como Design System con logo, color, tipografía, voz, iconos, redes, mockups y manual PDF.",
+      "description": "Crea o renueva la marca de una empresa con método de agencia y la entrega como Design System con logo, color, tipografía, voz, iconos, redes, banners de perfil, mockups y manual PDF.",
       "category": "design",
       "tags": [
         "branding",
@@ -17,7 +17,8 @@
         "identidad visual",
         "design system",
         "manual de marca",
-        "naming"
+        "naming",
+        "banners"
       ]
     }
   ]

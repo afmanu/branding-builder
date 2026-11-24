@@ -14,6 +14,7 @@ python3 $S/estado.py aprobar  expediente/project-state.json H02 --ref "mensaje d
 python3 $S/estado.py cambios  expediente/project-state.json H02 --ref "…" --nota "qué pidió cambiar"
 python3 $S/estado.py nueva-version expediente/project-state.json H02 --motivo "…"   # marca los derivados como pendientes de revisión
 python3 $S/estado.py pendiente expediente/project-state.json "Registro de marca sin comprobar"
+python3 $S/estado.py alcance expediente/project-state.json --anadir-entregable "Banners de perfil: X y LinkedIn"   # --entregable sustituye la lista
 python3 $S/estado.py mantenimiento expediente/project-state.json --responsable "<quién>" --cambios "<qué necesita nueva aprobación>"
 python3 $S/estado.py validar expediente/project-state.json [--punto H03_S]
 python3 $S/estado.py md expediente/project-state.json --salida project/decisiones.md
@@ -48,7 +49,7 @@ Si hay agentes disponibles, encarga la revisión al agente `revisor-de-marca` (n
 
 - **Coherencia:** promesa, voz y forma se sostienen entre piezas, y cada decisión central tiene su racional escrito en el README.
 - **Pertinencia:** la identidad se diferencia de los códigos observados en la categoría. Si no hubo investigación (Exprés), queda escrito como límite.
-- **Acabado y legibilidad:** todas las piezas revisadas a su tamaño de uso.
+- **Acabado y legibilidad:** todas las piezas revisadas a su tamaño de uso. Banners: `banners.py comprobar` sin errores y la simulación revisada (nada importante bajo la foto de perfil ni en lo que recorta el móvil; la misma regla de composición en todos).
 - **Archivos utilizables:** abre cada exportación y comprueba nombres y tamaños, que los SVG son vectores reales (sin imágenes incrustadas) y que el PDF y el ZIP abren. Un archivo que falta o no abre es una carencia, no un detalle.
 - **Repetibilidad:** crea una pieza nueva usando solo el README y los assets (p. ej. un formato que no esté incluido). Si falta una regla, añádela al README. Es una prueba hecha por Claude, no una validación con personas: preséntala así.
 - **Estado honesto:** separa lo listo, lo de ejemplo y lo pendiente. Si falta algo necesario para los usos acordados, la entrega es parcial y se dice.
@@ -72,6 +73,7 @@ Si hay agentes disponibles, encarga la revisión al agente `revisor-de-marca` (n
 - [ ] Fuentes reales con licencia que permita incluirlas, y su archivo de licencia.
 - [ ] `tokens.json` en listas, con nota de uso en cada token; cada grupo de assets con README.
 - [ ] Todas las piezas a tamaño exacto y revisadas visualmente.
+- [ ] Un banner por cada perfil del alcance; `banners.py comprobar --redes …` sin errores; simulación revisada; medidas «verificar» comprobadas o anotadas como pendientes.
 - [ ] Textos y datos de ejemplo señalados como tales.
 - [ ] Sin tópicos de IA en lo visual.
 - [ ] Revisión independiente hecha y prueba de repetibilidad con reglas que faltaban añadidas.

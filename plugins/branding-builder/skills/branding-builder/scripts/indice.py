@@ -24,14 +24,18 @@ import os
 import re
 import sys
 
-ORDEN_GRUPOS = ["Logos", "Iconos", "Redes", "Patrones", "Mockups", "Manual", "Papeleria", "Presentaciones"]
-TESELAS = {"Logos": "l", "Iconos": "m", "Redes": "l", "Patrones": "m", "Mockups": "l", "Manual": "s",
+ORDEN_GRUPOS = ["Logos", "Iconos", "Redes", "Banners", "Patrones", "Mockups", "Manual", "Papeleria", "Presentaciones"]
+TESELAS = {"Logos": "l", "Iconos": "m", "Redes": "l", "Banners": "l", "Patrones": "m", "Mockups": "l", "Manual": "s",
            "Papeleria": "m", "Presentaciones": "l"}
 RANGOS = {
     "Logos": [r"-logo-[^-_.]+\.svg$", r"-logo-[^-_.]+_\d+px\.png$", r"-logo-.+-sobre-.+\.svg$", r"-construccion\.svg$",
               r"-lockup-horizontal-sobre-", r"-lockup-horizontal-", r"-lockup-vertical-"],
     "Iconos": [r"-app-icon-[^_]+\.svg$", r"^favicon\.svg$", r"-app-icon-.+_1024\.png$", r"^apple-touch-icon", r"^android-chrome"],
-    "Redes": [r"^avatar-", r"^X-", r"^YouTube-", r"^LinkedIn-", r"^OG-", r"^Instagram-post-", r"^Instagram-story"],
+    "Redes": [r"^avatar-", r"^Instagram-post-", r"^Instagram-story", r"^YouTube-miniatura", r"^OG-",
+              r"^X-", r"^YouTube-", r"^LinkedIn-"],
+    "Banners": [r"^YouTube-banner", r"^X-cabecera", r"^LinkedIn-perfil", r"^LinkedIn-pagina", r"^Facebook-portada",
+                r"^Facebook-grupo", r"^Bluesky-", r"^Twitch-", r"^Discord-", r"^Skool-", r"^Whop-", r"^Pinterest-",
+                r"^Newsletter-"],
     "Patrones": [r"-patron-(?!logos).+\.svg$", r"-patron-(?!logos).+_\d+\.png$", r"-patron-logos-"],
     "Mockups": [r"^mockup-", r"^tarjeta-visita-anverso", r"^tarjeta-visita-reverso"],
     "Manual": [r"\.pdf$"],
@@ -156,7 +160,10 @@ def main():
     grupos = list(indice.get("groups", []))
     for grupo in ORDEN_GRUPOS + sorted(encontrados):
         if grupo in grupos_idx and grupo not in grupos:
-            grupos.append(grupo)
+            # Un grupo nuevo del plano (p. ej. Banners en un kit anterior) va tras el anterior que ya exista.
+            previos = ORDEN_GRUPOS[:ORDEN_GRUPOS.index(grupo)] if grupo in ORDEN_GRUPOS else []
+            pos = max([grupos.index(g) + 1 for g in previos if g in grupos], default=len(grupos) if not previos else 0)
+            grupos.insert(pos, grupo)
     indice["groups"] = grupos
     indice["lastChange"] = {"by": a.autor, "at": ahora(), "via": a.via, "note": a.nota}
 
