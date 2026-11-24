@@ -24,8 +24,8 @@ import os
 import re
 import sys
 
-ORDEN_GRUPOS = ["Logos", "Iconos", "Redes", "Banners", "Patrones", "Mockups", "Manual", "Papeleria", "Presentaciones"]
-TESELAS = {"Logos": "l", "Iconos": "m", "Redes": "l", "Banners": "l", "Patrones": "m", "Mockups": "l", "Manual": "s",
+ORDEN_GRUPOS = ["Logos", "Iconos", "Redes", "Banners", "Patrones", "Mockups", "Manual", "OnePager", "Papeleria", "Presentaciones"]
+TESELAS = {"Logos": "l", "Iconos": "m", "Redes": "l", "Banners": "l", "Patrones": "m", "Mockups": "l", "Manual": "s", "OnePager": "s",
            "Papeleria": "m", "Presentaciones": "l"}
 RANGOS = {
     "Logos": [r"-logo-[^-_.]+\.svg$", r"-logo-[^-_.]+_\d+px\.png$", r"-logo-.+-sobre-.+\.svg$", r"-construccion\.svg$",
@@ -39,6 +39,7 @@ RANGOS = {
     "Patrones": [r"-patron-(?!logos).+\.svg$", r"-patron-(?!logos).+_\d+\.png$", r"-patron-logos-"],
     "Mockups": [r"^mockup-", r"^tarjeta-visita-anverso", r"^tarjeta-visita-reverso"],
     "Manual": [r"\.pdf$"],
+    "OnePager": [r"\.pdf$", r"\.png$"],
 }
 TEXTO = {".md", ".json", ".csv", ".txt", ".js", ".css"}
 EXTRA_MIME = {".svg": "image/svg+xml", ".woff2": "font/woff2", ".woff": "font/woff", ".webp": "image/webp"}

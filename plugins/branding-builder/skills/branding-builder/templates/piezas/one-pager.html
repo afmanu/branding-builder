@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Plantilla de ESTRUCTURA: one pager A4 vertical para PDF (render.py pdf one-pager.html SIGLA-one-pager-A4.pdf)
+     y vista previa PNG (render.py png one-pager.html SIGLA-one-pager-A4_preview_1588x2246.png).
+     Márgenes de 18 mm. Bloques: cabecera con logo · etiqueta + titular + resumen · cómo trabajamos (3 pasos) ·
+     para quién / qué te llevas · llamada a la acción con contacto · pie con versión.
+     Los textos salen de la plataforma; contacto y cifras son de ejemplo. ?titular=…&texto=… (admite <em>). -->
+<link rel="stylesheet" href="brand.css">
+<style>
+@page { size: A4; margin: 0; }
+html, body { margin: 0; }
+.hoja { width: 210mm; height: 297mm; box-sizing: border-box; padding: 18mm 18mm 14mm; position: relative; overflow: hidden;
+  background: var(--bg); color: var(--ink); display: flex; flex-direction: column; }
+.motivo { position: absolute; top: 0; right: 0; width: 55mm; height: 120mm; background-image: url("patron.svg"); }
+.cabecera img { height: 13mm; display: block; }
+:where(.etiqueta) { font-family: var(--font-mono); font-size: 8pt; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.hero { margin-top: 20mm; max-width: 130mm; position: relative; }
+:where(.titular) { font-family: var(--font-display); font-weight: 800; font-size: 38pt; line-height: 1; letter-spacing: -.03em; margin: 6mm 0 0; }
+.titular em { font-style: normal; background: linear-gradient(transparent 62%, var(--accent) 62%, var(--accent) 92%, transparent 92%); }
+:where(.resumen) { font-family: var(--font-sans); font-size: 12pt; line-height: 1.5; color: var(--ink-muted); margin: 7mm 0 0; max-width: 135mm; }
+:where(h2) { font-family: var(--font-display); font-weight: 700; font-size: 13pt; margin: 0 0 4mm; }
+.bloque { margin-top: 13mm; }
+.pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; }
+:where(.paso) { background: var(--surface); border-radius: var(--radius-md, 8px); padding: 6mm 5mm; }
+:where(.paso .num) { font-family: var(--font-mono); font-size: 8pt; letter-spacing: .08em; color: var(--accent-ink, var(--ink-muted)); }
+:where(.paso h3) { font-family: var(--font-display); font-weight: 700; font-size: 12pt; margin: 3mm 0 2mm; }
+:where(.paso p) { font-family: var(--font-sans); font-size: 9.5pt; line-height: 1.5; color: var(--ink-muted); margin: 0; }
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+:where(ul) { margin: 0; padding: 0 0 0 5mm; font-family: var(--font-sans); font-size: 10pt; line-height: 1.5; }
+li { margin-bottom: 2mm; }
+li::marker { color: var(--accent); }
+.cta { margin-top: auto; border-radius: var(--radius-md, 8px); padding: 8mm 9mm; display: flex; justify-content: space-between; align-items: center; gap: 8mm; }
+:where(.cta) { background: var(--action); color: var(--on-action); }
+:where(.cta strong) { font-family: var(--font-display); font-weight: 800; font-size: 17pt; display: block; }
+:where(.cta span) { font-family: var(--font-sans); font-size: 9.5pt; opacity: .8; }
+:where(.contacto) { font-family: var(--font-mono); font-size: 8.5pt; letter-spacing: .06em; text-transform: uppercase; text-align: right; line-height: 1.8; }
+.pie { margin-top: 5mm; display: flex; justify-content: space-between; }
+:where(.pie) { font-family: var(--font-mono); font-size: 7pt; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="hoja">
+  <div class="motivo" aria-hidden="true"></div>
+  <div class="cabecera"><img src="logo.svg" alt=""></div>
+
+  <div class="hero">
+    <div class="etiqueta">Descriptor · Ciudad</div>
+    <h1 class="titular" data-campo="titular">Titular con la <em>promesa</em> de la marca.</h1>
+    <p class="resumen" data-campo="texto">Relato corto de la plataforma: qué hace la empresa, para quién y qué cambia, en dos o tres líneas.</p>
+  </div>
+
+  <div class="bloque">
+    <h2>Cómo trabajamos</h2>
+    <div class="pasos">
+      <div class="paso"><div class="num">01 · PASO</div><h3>Primer paso</h3><p>Qué pasa y qué gana el cliente en este paso.</p></div>
+      <div class="paso"><div class="num">02 · PASO</div><h3>Segundo paso</h3><p>Qué pasa y qué gana el cliente en este paso.</p></div>
+      <div class="paso"><div class="num">03 · PASO</div><h3>Tercer paso</h3><p>Qué pasa y qué gana el cliente en este paso.</p></div>
+    </div>
+  </div>
+
+  <div class="bloque dos">
+    <div><h2>Para quién</h2><ul><li>Público prioritario.</li><li>Situación en la que está.</li><li>Problema que le cuesta tiempo o dinero.</li></ul></div>
+    <div><h2>Qué te llevas</h2><ul><li>Resultado concreto.</li><li>Segundo resultado.</li><li>Cómo se mide.</li></ul></div>
+  </div>
+
+  <div class="cta">
+    <div><strong>Llamada a la acción.</strong><span>Qué ocurre al dar el paso.</span></div>
+    <div class="contacto" data-ejemplo>hola@ejemplo.com<br>ejemplo.com<br>Ciudad</div>
+  </div>
+  <div class="pie"><span>Marca · Idea de marca</span><span>v1.0</span></div>
+</div>
+</body>
+</html>

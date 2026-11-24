@@ -16,6 +16,6 @@ Arranca un proyecto de marca nuevo con el método de la skill `branding-builder`
 2. Ejecuta `python3 ../branding-builder/scripts/check_env.py` (con la ruta completa) y resume el veredicto en una línea. Si falta algo imprescindible, la estrategia puede avanzar igualmente; ofrece resolverlo antes de producir (ver `/branding-check`).
 3. Usa lo que el usuario haya escrito junto al comando (nombre de la empresa, briefing, archivos adjuntos) para no preguntar lo que ya está dicho. Si adjunta logo, colores o una web, es modo B.
 4. Si el modo o la profundidad (Completa o Exprés) no están claros, pregúntalos juntos en una sola pregunta, recomendando Completa para una empresa real o un rebranding y Exprés para pruebas o prisa.
-5. Crea la carpeta `<marca>-kit/` y el estado con `estado.py init`, y empieza la fase 00 según `references/estrategia.md` de la skill principal.
+5. Crea la carpeta `<marca>-kit/` y el estado con `estado.py init`, y empieza la fase 00 según `references/estrategia.md` de la skill principal. En la primera tanda de preguntas incluye siempre «¿Vas a necesitar elementos para redes sociales?» (sí / no): decide si hay grupos Redes y Banners. El one pager va en todas las marcas y no se pregunta.
 
 No empieces a diseñar antes de que la persona apruebe el alcance (H00) y, en Exprés, el brief.

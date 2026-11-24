@@ -1,10 +1,10 @@
 # Branding Builder
 
-Plugin para crear o renovar la marca de una empresa con un método de agencia y entregarla lista para usar: un **Design System** con el manual de marca navegable, los tokens, las fuentes, la portada, el registro de decisiones y todos los assets descargables (logos, iconos, piezas de redes, banners de cada perfil social, patrones, mockups y manual en PDF), más un **ZIP** con los editables y el `favicon.ico`.
+Plugin para crear o renovar la marca de una empresa con un método de agencia y entregarla lista para usar: un **Design System** con el manual de marca navegable, los tokens, las fuentes, la portada, el registro de decisiones y todos los assets descargables (logos, iconos, one pager A4, piezas de redes y banners de cada perfil social si la marca los necesita, patrones, mockups y manual en PDF), más un **ZIP** con los editables y el `favicon.ico`.
 
 ## Qué hace
 
-1. **Alcance:** qué hace la empresa, para quién, qué se conserva, para qué se va a usar el kit y qué perfiles sociales tiene (cada uno lleva su banner).
+1. **Alcance:** qué hace la empresa, para quién, qué se conserva, para qué se va a usar el kit y si va a necesitar elementos para redes sociales; si es que sí, qué perfiles tiene (cada uno lleva su banner).
 2. **Descubrir** (profundidad Completa): público, visión interna y competidores con fuentes y fechas.
 3. **Plataforma:** propósito, promesa, personalidad, voz e idea de marca. La redacta Claude y tú decides.
 4. **Identidad:** naming si hace falta, 2–3 rutas visuales comparables, logo con su regla geométrica, color con contraste comprobado, tipografía con archivos reales y licencia, y 3 piezas de muestra antes de producir todo.
@@ -39,6 +39,10 @@ Scripts incluidos (Python, en la skill principal): comprobación del entorno, es
 - `/branding-nuevo Acme Estudio, estudio de arquitectura en Valencia` y responde a las preguntas.
 - O pídelo con tus palabras: «quiero crear la marca de mi empresa».
 - Si lo dejas a medias, guarda el expediente que te entrega y retómalo con `/branding-retomar`.
+
+## One pager
+
+Toda marca sale con un one pager A4 vertical (PDF y vista previa PNG) hecho con `templates/piezas/one-pager.html`: titular con la promesa, resumen, cómo trabaja en 3 pasos, para quién, qué se lleva el cliente y una llamada a la acción con el contacto. Los textos salen de la plataforma.
 
 ## Banners de perfil
 
