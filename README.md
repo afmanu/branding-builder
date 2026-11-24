@@ -1,6 +1,8 @@
 # Branding Builder
 
-Plugin para Claude que crea o renueva la marca de una empresa con un método de agencia y la entrega lista para usar: un **Design System** con el manual de marca navegable, los tokens, las fuentes, el registro de decisiones y todos los assets descargables (logos, iconos, piezas de redes, banners de perfil para YouTube, X, LinkedIn, Facebook, Bluesky, Twitch, Discord, Skool, Whop, Pinterest y newsletter, patrones, mockups y manual en PDF), más un **ZIP** con los editables.
+Plugin para Claude que crea o renueva la marca de una empresa con un método de agencia y la entrega lista para usar: un **Design System** con el manual de marca navegable, los tokens, las fuentes, el registro de decisiones y todos los assets descargables (logos, iconos, papelería, presentación, one pager, fondos, componentes web y, si la marca usa redes, piezas y banners de perfil para YouTube, X, LinkedIn, Facebook, Bluesky, Twitch, Discord, Skool, Whop, Pinterest y newsletter, patrones, mockups y manual en PDF), más un **ZIP** con los editables.
+
+Todas las marcas salen con el mismo **paquete estándar**: una base obligatoria (logos y lockups, color, tipografía y tokens, iconos y avatares, patrón y fondos 1920×1080, papelería, presentación, one pager, componentes web básicos y manual PDF) y los módulos que activen las cinco preguntas de arranque (redes sociales, material impreso, presentaciones, app o producto digital y submarcas). Si una pregunta queda sin responder, no se inventa: el kit sale con la base y ese módulo queda pendiente.
 
 Este repositorio es un catálogo de plugins (marketplace) llamado `afmanu-branding`. Contiene un plugin: `branding-builder`.
 
