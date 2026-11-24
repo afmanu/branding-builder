@@ -11,7 +11,7 @@ Uso:
   python3 estado.py aprobar  <estado.json> H02 --ref "mensaje del usuario, 2026-11-23" [--actor usuario]
   python3 estado.py cambios  <estado.json> H02 --ref "..." --nota "qué pidió cambiar"
   python3 estado.py nueva-version <estado.json> H02 --motivo "..."
-  python3 estado.py alcance <estado.json> [--naming ...] [--nombre-existente ...] [--entregable ...]
+  python3 estado.py alcance <estado.json> [--naming ...] [--nombre-existente ...] [--entregable ...] [--anadir-entregable ...]
   python3 estado.py pendiente <estado.json> "Registrar la marca en la OEPM"   |   --hecho 2
   python3 estado.py mantenimiento <estado.json> --responsable "..." --cambios "..."
   python3 estado.py validar <estado.json> [--punto H02]
@@ -249,7 +249,10 @@ def cmd_alcance(a):
     if a.nombre_existente is not None:
         alc["existing_name"] = a.nombre_existente
     if a.entregable:
-        alc["deliverables"] = a.entregable
+        alc["deliverables"] = a.entregable          # sustituye la lista entera
+    for e in a.anadir_entregable or []:              # añade sin borrar (p. ej. banners en un kit ya hecho)
+        if e not in alc.setdefault("deliverables", []):
+            alc["deliverables"].append(e)
     if a.objetivo:
         estado["project"]["objective"] = a.objetivo
     guardar(a.estado, estado)
@@ -400,7 +403,8 @@ def main():
     al.add_argument("estado")
     al.add_argument("--naming", choices=sorted(NAMING))
     al.add_argument("--nombre-existente")
-    al.add_argument("--entregable", action="append")
+    al.add_argument("--entregable", action="append", help="sustituye la lista de entregables")
+    al.add_argument("--anadir-entregable", action="append", help="añade un entregable a la lista")
     al.add_argument("--objetivo")
     for nombre in ("preparar", "aprobar", "cambios", "nueva-version"):
         s = sp.add_parser(nombre)

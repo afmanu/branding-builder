@@ -19,6 +19,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import urllib.parse
 from pathlib import Path
 
@@ -95,11 +96,17 @@ def con_playwright(tareas):
             ancho, alto = resolver_tamano(entrada, salida, t.get("ancho"), t.get("alto"))
             pagina = nav.new_page(viewport={"width": ancho, "height": alto}, device_scale_factor=1)
             if entrada.lower().endswith(".svg"):
+                # Una página creada con set_content (about:blank) no puede cargar archivos locales:
+                # se escribe un HTML temporal y se abre por file:// para que la imagen cargue.
                 html = (f'<html><body style="margin:0;background:transparent">'
                         f'<img src="{Path(entrada).resolve().as_uri()}" style="display:block;width:{ancho}px;height:{alto}px">'
                         f'</body></html>')
-                pagina.set_content(html)
+                with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as tmp:
+                    tmp.write(html)
+                pagina.goto(Path(tmp.name).as_uri())
                 pagina.wait_for_load_state("networkidle")
+                pagina.wait_for_function("Array.from(document.images).every(i => i.complete && i.naturalWidth > 0)", timeout=10000)
+                os.unlink(tmp.name)
             else:
                 pagina.goto(url_de(entrada, t.get("params")))
                 pagina.wait_for_load_state("networkidle")

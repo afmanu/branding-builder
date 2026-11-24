@@ -40,6 +40,9 @@ h1, h2 { margin: 0; }
 .tipografia .muestra { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 24px; }
 .aplicaciones .rejilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
 .aplicaciones img { width: 100%; height: 360px; object-fit: cover; border-radius: var(--radius-md, 12px); border: 1px solid var(--border); }
+.banners .pila { display: flex; flex-direction: column; gap: 22px; margin-top: 40px; }
+.banners .pila img { display: block; max-width: 100%; max-height: 210px; border-radius: 8px; border: 1px solid var(--border); }
+.banners small { font-family: var(--font-mono); font-size: 16px; letter-spacing: .06em; color: var(--ink-muted); }
 .cierre { display: grid; place-items: center; text-align: center; }
 .cierre img { height: 160px; }
 </style>
@@ -78,6 +81,11 @@ h1, h2 { margin: 0; }
 <section class="pagina aplicaciones">
   <div class="etiqueta">APLICACIONES</div><h2>Piezas</h2>
   <div class="rejilla"><img src="aplicacion-1.png" alt=""><img src="aplicacion-2.png" alt=""><img src="aplicacion-3.png" alt=""></div>
+</section>
+<!-- Banners de perfil: apílalos del más ancho al más alto; si no caben, dos columnas o dos páginas. -->
+<section class="pagina banners">
+  <div class="etiqueta">APLICACIONES</div><h2>Banners de perfil</h2>
+  <div class="pila"><img src="banner-1.png" alt=""><small>RED · ANCHO×ALTO</small><img src="banner-2.png" alt=""><small>RED · ANCHO×ALTO</small></div>
 </section>
 <section class="pagina cierre">
   <div><img src="logo.svg" alt=""><p>ejemplo.com</p></div>

@@ -2,17 +2,17 @@
 name: branding-builder
 description: >
   Método de agencia para crear o renovar la marca de una empresa y entregarla como Design System
-  (logo, color, tipografía, voz, iconos, redes, mockups y manual PDF), con scripts y plantillas.
+  (logo, color, tipografía, voz, iconos, redes, banners de perfil, mockups y manual PDF), con scripts y plantillas.
   Se usa cuando el usuario pide "crear una marca", "hacer el branding de mi empresa", "un brand kit",
   "identidad visual", "manual de marca", "rebranding" o "naming", y cuando las skills branding-nuevo,
   branding-retomar o branding-cambio la cargan.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Branding Builder
 
-Acompaña a la persona como un equipo de branding: investiga, propone, explica las consecuencias, materializa y refina con ella hasta entregar una marca coherente y utilizable por otras personas. El resultado es un artifact Design System (README como manual de marca, tokens, fuentes, portada, registro de decisiones y seis grupos de assets descargables, con el manual en PDF dentro) y un ZIP con lo que no cabe en él.
+Acompaña a la persona como un equipo de branding: investiga, propone, explica las consecuencias, materializa y refina con ella hasta entregar una marca coherente y utilizable por otras personas. El resultado es un artifact Design System (README como manual de marca, tokens, fuentes, portada, registro de decisiones y hasta siete grupos de assets descargables, entre ellos los banners de cada perfil social, con el manual en PDF dentro) y un ZIP con lo que no cabe en él.
 
 Responde y escribe el kit en el idioma del usuario (por defecto, español de España, de tú).
 
@@ -39,11 +39,12 @@ Todas las rutas son relativas a la carpeta de esta skill (la que se indica al ca
 | `tokens_css.py` | `brand.css` desde `tokens.json` para las plantillas |
 | `render.py` | HTML/SVG a PNG al tamaño exacto y HTML a PDF |
 | `iconos.py` | Esquinas de icono de app, apple-touch, android y `favicon.ico` |
+| `banners.py` | Catálogo de banners por red, lote de renderizado, comprobación de tamaño y peso, y simulación con lo que tapa la interfaz |
 | `indice.py` | `design-system.json` a partir de los assets subidos |
 | `libro_marca.py` | Libro de marca en página web si no hay Design System |
 | `empaquetar.py` | ZIP del kit |
 
-Plantillas de estructura en `templates/piezas/` (post, story, banners, avatar, icono de app, tarjeta, membrete, firma, lámina de ruta, manual, portada, mockups) y esqueleto del README en `templates/textos/`. Dan retícula, zonas seguras y tamaños; el estilo lo pone cada marca.
+Plantillas de estructura en `templates/piezas/` (post, story, banners de perfil con su catálogo `banners-formatos.js`, avatar, icono de app, tarjeta, membrete, firma, lámina de ruta, manual, portada, mockups) y esqueleto del README en `templates/textos/`. Dan retícula, zonas seguras y tamaños; el estilo lo pone cada marca.
 
 ## Principios
 
@@ -89,7 +90,7 @@ Sigue `references/estrategia.md`. En Completa, encarga la investigación de comp
 Sigue `references/identidad.md`: naming si toca, rutas en láminas comparables (`lamina-ruta.html`), logo y regla geométrica, color con `contraste.py`, tipografía con archivos reales y licencia, `tokens.json` en listas. Termina con el sistema aplicado (H03_S) antes de producir todo.
 
 ### 4. Producción (fase 04)
-Sigue `references/produccion.md`: `tokens_css.py` → copiar plantillas a `editables/` → adaptar a la marca → `render.py` → revisar cada pieza a ojo → iconos, mockups, manual PDF.
+Sigue `references/produccion.md`: `tokens_css.py` → copiar plantillas a `editables/` → adaptar a la marca → `render.py` → revisar cada pieza a ojo → banners con `banners.py` (lote, comprobar, simular) → iconos, mockups, manual PDF.
 
 ### 5. Publicación, calidad y entrega
 - Revisión independiente con el agente `revisor-de-marca` si hay agentes; si no, los criterios de `references/calidad-y-continuidad.md`. Corrige antes de publicar.
