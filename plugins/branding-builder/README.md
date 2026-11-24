@@ -2,9 +2,21 @@
 
 Plugin para crear o renovar la marca de una empresa con un método de agencia y entregarla lista para usar: un **Design System** con el manual de marca navegable, los tokens, las fuentes, la portada, el registro de decisiones y todos los assets descargables (logos, iconos, one pager A4, piezas de redes y banners de cada perfil social si la marca los necesita, patrones, mockups y manual en PDF), más un **ZIP** con los editables y el `favicon.ico`.
 
+## Paquete estándar
+
+Todos los kits tienen la misma estructura y la misma **base obligatoria**: logos y lockups, color, tipografía y tokens, iconos y avatares, patrón y fondos 1920×1080, papelería (tarjeta, membrete y firma), presentación, one pager, componentes UI básicos y manual PDF. Además, cada kit añade los **módulos** que activen las cinco preguntas de arranque, que se hacen siempre antes de producir nada:
+
+1. ¿Redes sociales? ¿En qué canales? Activa posts, story, banners de perfil, miniaturas y mockup de perfil.
+2. ¿Material impreso además de la papelería? Activa cartelería, folletos o packaging.
+3. ¿Presentaciones frecuentes? Activa diapositivas extra y una plantilla de Slides editable.
+4. ¿App o producto digital? Activa componentes ampliados.
+5. ¿Submarcas? Activa sus lockups y acentos.
+
+Si una pregunta queda sin responder, el kit sale con la base y ese módulo queda pendiente: no se inventan canales.
+
 ## Qué hace
 
-1. **Alcance:** qué hace la empresa, para quién, qué se conserva, para qué se va a usar el kit y si va a necesitar elementos para redes sociales; si es que sí, qué perfiles tiene (cada uno lleva su banner).
+1. **Alcance:** las cinco preguntas de arranque y, después, qué hace la empresa, para quién, qué se conserva y, si hay redes, qué perfiles tiene (cada uno lleva su banner).
 2. **Descubrir** (profundidad Completa): público, visión interna y competidores con fuentes y fechas.
 3. **Plataforma:** propósito, promesa, personalidad, voz e idea de marca. La redacta Claude y tú decides.
 4. **Identidad:** naming si hace falta, 2–3 rutas visuales comparables, logo con su regla geométrica, color con contraste comprobado, tipografía con archivos reales y licencia, y 3 piezas de muestra antes de producir todo.

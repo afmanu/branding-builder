@@ -74,6 +74,8 @@ Si hay agentes disponibles, encarga la revisión al agente `revisor-de-marca` (n
 - [ ] `tokens.json` en listas, con nota de uso en cada token; cada grupo de assets con README.
 - [ ] Todas las piezas a tamaño exacto y revisadas visualmente.
 - [ ] One pager A4 en PDF y PNG, con textos de la plataforma y el contacto marcado si es de ejemplo.
+- [ ] Las cinco preguntas de arranque respondidas o anotadas como pendientes; módulos producidos solo según sus respuestas.
+- [ ] Base completa: papelería, presentación, one pager, fondos 1920×1080 (claro y oscuro), componentes UI, avatares e iconos por fondo.
 - [ ] Redes y Banners solo si la persona dijo que necesita elementos para redes sociales.
 - [ ] Un banner por cada perfil del alcance; `banners.py comprobar --redes …` sin errores; simulación revisada; medidas «verificar» comprobadas o anotadas como pendientes.
 - [ ] Textos y datos de ejemplo señalados como tales.
