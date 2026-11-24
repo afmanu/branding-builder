@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<!-- Plantilla de ESTRUCTURA: one pager A4 vertical para PDF
+     (render.py pdf one-pager-a4.html SIGLA-one-pager-A4.pdf; vista previa: render.py png ... SIGLA-one-pager-A4_preview.png a 1240x1754).
+     Márgenes de 18 mm. Seis bloques fijos: cabecera, titular y frase, cómo trabajamos (3 pasos), para quién, qué te llevas y llamada a la acción.
+     El hueco libre se llena con el patrón de la marca (bloque .motivo); si hay más texto, se encoge solo.
+     Los textos salen de la plataforma; los marcados con data-ejemplo son de ejemplo. Cambia composición y estilo para que sea de la marca. -->
+<link rel="stylesheet" href="brand.css">
+<style>
+@page { size: A4; margin: 0; }
+html, body { margin: 0; }
+@media print { body { zoom: 1 !important; } }
+.hoja { width: 210mm; height: 297mm; box-sizing: border-box; padding: 18mm; position: relative; overflow: hidden;
+        background: var(--bg); color: var(--ink); display: flex; flex-direction: column; gap: 9mm; }
+.cabecera { display: flex; justify-content: space-between; align-items: center; }
+.cabecera img { height: 12mm; display: block; }
+:where(.etiqueta) { font-family: var(--font-mono); font-size: 8pt; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.titular { margin-top: 6mm; max-width: 150mm; }
+:where(.titular h1) { font-family: var(--font-display); font-size: 34pt; line-height: 1.05; margin: 0 0 5mm; }
+:where(.titular p) { font-family: var(--font-sans); font-size: 13pt; line-height: 1.45; margin: 0; color: var(--ink-muted); }
+h2 { margin: 0 0 4mm; }
+:where(h2) { font-family: var(--font-mono); font-size: 8.5pt; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); font-weight: 500; }
+.pasos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; }
+.paso { border-top: .6mm solid var(--ink); padding-top: 3mm; }
+:where(.paso b) { display: block; font-family: var(--font-display); font-size: 13pt; margin-bottom: 2mm; }
+:where(.paso, .col p, .col li) { font-family: var(--font-sans); font-size: 10pt; line-height: 1.45; }
+.paso span { display: block; }
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+.col p { margin: 0; }
+.col ul { margin: 0; padding-left: 4.5mm; }
+.col li { margin-bottom: 1.5mm; }
+.cta { display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm;
+       padding: 8mm; border-radius: var(--radius-lg, 4mm); background: var(--ink); color: var(--bg); }
+:where(.cta strong) { font-family: var(--font-display); font-size: 18pt; line-height: 1.15; display: block; max-width: 100mm; }
+:where(.cta .contacto) { font-family: var(--font-mono); font-size: 9pt; line-height: 1.6; text-align: right; }
+.motivo { flex: 1; min-height: 20mm; border-radius: var(--radius-lg, 4mm); background-image: url("patron.svg"); background-size: 30mm; }
+</style>
+</head>
+<body>
+<div class="hoja">
+  <div class="cabecera">
+    <img src="logo.svg" alt="">
+    <span class="etiqueta" data-ejemplo>Sector · Ciudad</span>
+  </div>
+  <div class="titular" data-ejemplo>
+    <h1>Titular de una línea con la promesa de la marca.</h1>
+    <p>Una o dos frases que dicen qué hace la empresa, para quién y qué cambia para el cliente.</p>
+  </div>
+  <section>
+    <h2>Cómo trabajamos</h2>
+    <div class="pasos" data-ejemplo>
+      <div class="paso"><b>01 · Paso</b><span>Qué pasa en este paso y qué recibe el cliente.</span></div>
+      <div class="paso"><b>02 · Paso</b><span>Qué pasa en este paso y qué recibe el cliente.</span></div>
+      <div class="paso"><b>03 · Paso</b><span>Qué pasa en este paso y qué recibe el cliente.</span></div>
+    </div>
+  </section>
+  <div class="dos">
+    <section class="col" data-ejemplo>
+      <h2>Para quién</h2>
+      <p>El público prioritario de la plataforma, descrito por su situación y no por datos demográficos.</p>
+    </section>
+    <section class="col" data-ejemplo>
+      <h2>Qué te llevas</h2>
+      <ul><li>Resultado concreto 1</li><li>Resultado concreto 2</li><li>Resultado concreto 3</li></ul>
+    </section>
+  </div>
+  <div class="motivo" aria-hidden="true"></div>
+  <div class="cta" data-ejemplo>
+    <strong>Llamada a la acción en una frase.</strong>
+    <span class="contacto">ejemplo.com<br>hola@ejemplo.com<br>+34 600 000 000</span>
+  </div>
+</div>
+<script>
+/* Vista previa en PNG: el A4 mide 794 px a 96 ppp; si la ventana es mayor (p. ej. 1240×1754), se amplía para llenarla. */
+if (innerWidth > 800) document.body.style.zoom = innerWidth / 793.7;
+</script>
+</body>
+</html>

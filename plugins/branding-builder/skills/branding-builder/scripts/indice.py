@@ -24,9 +24,9 @@ import os
 import re
 import sys
 
-ORDEN_GRUPOS = ["Logos", "Iconos", "Redes", "Banners", "Patrones", "Mockups", "Manual", "Papeleria", "Presentaciones"]
+ORDEN_GRUPOS = ["Logos", "Iconos", "Redes", "Banners", "Patrones", "Mockups", "Manual", "Papeleria", "Presentaciones", "OnePager"]
 TESELAS = {"Logos": "l", "Iconos": "m", "Redes": "l", "Banners": "l", "Patrones": "m", "Mockups": "l", "Manual": "s",
-           "Papeleria": "m", "Presentaciones": "l"}
+           "Papeleria": "m", "Presentaciones": "l", "OnePager": "m"}
 RANGOS = {
     "Logos": [r"-logo-[^-_.]+\.svg$", r"-logo-[^-_.]+_\d+px\.png$", r"-logo-.+-sobre-.+\.svg$", r"-construccion\.svg$",
               r"-lockup-horizontal-sobre-", r"-lockup-horizontal-", r"-lockup-vertical-"],
@@ -36,9 +36,10 @@ RANGOS = {
     "Banners": [r"^YouTube-banner", r"^X-cabecera", r"^LinkedIn-perfil", r"^LinkedIn-pagina", r"^Facebook-portada",
                 r"^Facebook-grupo", r"^Bluesky-", r"^Twitch-", r"^Discord-", r"^Skool-", r"^Whop-", r"^Pinterest-",
                 r"^Newsletter-"],
-    "Patrones": [r"-patron-(?!logos).+\.svg$", r"-patron-(?!logos).+_\d+\.png$", r"-patron-logos-"],
+    "Patrones": [r"-patron-(?!logos).+\.svg$", r"-patron-(?!logos).+_\d+\.png$", r"-patron-logos-", r"-fondo-.+_1920x1080\.png$"],
     "Mockups": [r"^mockup-", r"^tarjeta-visita-anverso", r"^tarjeta-visita-reverso"],
     "Manual": [r"\.pdf$"],
+    "OnePager": [r"-one-pager-.+\.pdf$", r"-one-pager-.+_preview\.png$"],
 }
 TEXTO = {".md", ".json", ".csv", ".txt", ".js", ".css"}
 EXTRA_MIME = {".svg": "image/svg+xml", ".woff2": "font/woff2", ".woff": "font/woff", ".webp": "image/webp"}

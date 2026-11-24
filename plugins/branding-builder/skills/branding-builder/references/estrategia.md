@@ -4,16 +4,30 @@
 
 Extrae del encargo y los materiales: qué ofrece la organización y qué puede demostrar hoy, qué cambio busca, sus públicos, qué se conserva (nombre, logo, colores, reconocimiento), restricciones, para qué se va a usar el kit y quién aprueba (por defecto, el usuario). No presupongas que toda empresa tiene comunidad ni que necesita todas las redes.
 
+### Preguntas de arranque (obligatorias, siempre las primeras)
+
+Antes de cualquier otra pregunta, y antes de producir nada, haz estas cinco en una sola tanda con la herramienta de preguntas (opciones concretas y respuesta libre). Sus respuestas deciden qué módulos lleva el kit, además de la base obligatoria de `plano.md`:
+
+1. **Redes sociales:** ¿la marca va a necesitar piezas para redes? ¿En qué canales? (multiselección: Instagram, X, LinkedIn perfil, LinkedIn página, YouTube, TikTok, Facebook, otras, ninguna)
+2. **Material impreso:** ¿se va a imprimir algo más allá de la papelería básica? (cartelería, folletos, packaging, rotulación, ninguno)
+3. **Presentaciones:** ¿se van a hacer presentaciones con frecuencia? (comerciales, formación, eventos)
+4. **App o producto digital:** ¿hay o habrá web, app o producto digital propio? Si sí, los componentes de interfaz se amplían más allá de los básicos.
+5. **Submarcas:** ¿existen o habrá productos, servicios o líneas con nombre propio? (p. ej. «Marca chat»)
+
+Si alguna queda sin responder, no la supongas: el kit sale con la base obligatoria y **sin** los módulos que dependen de esa respuesta, y queda anotada con `estado.py pendiente` para añadirlos después con `/branding-cambio`. No inventes canales. Lo que ya se ve en los materiales (p. ej. un logo de submarca) sí cuenta como respuesta, pero confírmalo.
+
+### Resto de preguntas
+
 Pregunta lo que falte con la herramienta de preguntas (si no hay, en la conversación), en tandas de máximo 4 preguntas con opciones concretas y respuesta libre. Nunca pidas lo que ya se ve en los archivos. Total orientativo: unas 12–15 preguntas en Exprés y no más de 20 en Completa, repartidas entre fases.
 
 - **Esencia:** nombre y eslogan (si no hay eslogan, ofrécete a proponer 3); qué hace, en una frase; para quién; referencias que le gustan y que no; idioma y tratamiento (tú / usted).
 - **Encargo:** marca nueva, rebranding o solo identidad visual; el nombre se conserva, hay que crearlo o hay que cambiarlo (si se conserva, H03_N no aplica).
-- **Usos:** canales (Instagram, X, YouTube, LinkedIn, TikTok, web o app, impresión) y formatos de contenido que se repiten (p. ej. lanzamiento de producto, caso de cliente, consejo semanal); de aquí salen plantillas y etiquetas.
-- **Perfiles con banner:** de los canales anteriores, qué perfiles existen o se van a abrir, porque cada uno lleva su banner: canal de YouTube, X, LinkedIn (perfil personal de quien da la cara, página de empresa o ambos), Facebook (página o grupo), Bluesky, Twitch, Discord, plataforma de comunidad o cursos (Skool, Whop…) y cabecera de newsletter. Ofrécelos como multiselección con los canales ya mencionados marcados; Instagram, TikTok y Threads no tienen banner. Para las plataformas con medida «verificar» del catálogo (`banners.py lista`), pide el tamaño que muestra su pantalla de subida o anótalo como pendiente. La lista de banners entra en los entregables del alcance.
-- **Módulos de empresa** (multiselección): papelería y firma de email, presentaciones, componentes para web o app, ninguno. Datos reales para tarjeta, membrete y firma, o de ejemplo.
+- **Usos:** a partir de los canales de la pregunta de arranque 1, los formatos de contenido que se repiten (p. ej. lanzamiento de producto, caso de cliente, consejo semanal); de aquí salen plantillas y etiquetas.
+- **Perfiles con banner** (solo si hay redes): de los canales anteriores, qué perfiles existen o se van a abrir, porque cada uno lleva su banner: canal de YouTube, X, LinkedIn (perfil personal de quien da la cara, página de empresa o ambos), Facebook (página o grupo), Bluesky, Twitch, Discord, plataforma de comunidad o cursos (Skool, Whop…) y cabecera de newsletter. Ofrécelos como multiselección con los canales ya mencionados marcados; Instagram, TikTok y Threads no tienen banner. Para las plataformas con medida «verificar» del catálogo (`banners.py lista`), pide el tamaño que muestra su pantalla de subida o anótalo como pendiente. La lista de banners entra en los entregables del alcance.
+- **Datos de empresa:** la papelería, la presentación y el one pager son base obligatoria (ver `plano.md`); pregunta si hay datos reales para tarjeta, membrete, firma y one pager o se usan de ejemplo, y si se necesitan plantillas de factura o presupuesto.
 - **Modo B — Lo que existe:** logo en SVG (si solo hay PNG/JPG, avisa: se vectoriza con vtracer/potrace si están, o se redibuja a mano si es sencillo; los ilustrados o con degradados pierden calidad y se usan como PNG); colores en HEX (si no hay, se extraen del logo); tipografías y su licencia; restricciones (colores de la competencia, elementos obligatorios).
 
-**H00:** presenta el alcance en 5–8 líneas y registra la aprobación con `estado.py`. En Exprés va dentro del brief (fase 02).
+**H00:** presenta el alcance en 5–8 líneas, con la base obligatoria y los módulos activados por las preguntas de arranque (y los que quedan fuera por falta de respuesta), y registra la aprobación con `estado.py`. En Exprés va dentro del brief (fase 02).
 
 ## Fase 01 — Descubrir (solo Completa)
 

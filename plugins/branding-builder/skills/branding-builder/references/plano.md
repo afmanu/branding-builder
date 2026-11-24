@@ -1,6 +1,21 @@
 # El plano: qué hay al final
 
-Todo el proceso trabaja hacia este resultado. No cambies la estructura salvo que el usuario lo pida; quita solo las piezas de canales que no use.
+Todo el proceso trabaja hacia este resultado, que es el **paquete estándar** común a todas las marcas: una **base obligatoria** que lleva cualquier kit y unos **módulos** que se activan con las preguntas de arranque de la fase 00 (`estrategia.md`). Así todos los kits tienen la misma estructura y las mismas piezas base. No cambies la estructura salvo que el usuario lo pida.
+
+## Base obligatoria (todos los kits)
+
+Logos y lockups · símbolo · color, tipografía y tokens · iconos de app y favicon · avatares (uno por fondo de marca) · imagen OG · patrón y fondos 1920×1080 · mockup de tarjetas · papelería (tarjeta, membrete y firma de email) · presentación · **one pager** · componentes UI básicos · manual PDF · portada y README.
+
+## Módulos según las preguntas de arranque
+
+| Respuesta | Qué añade |
+|---|---|
+| Redes: sí, con canales | Posts y story de Instagram (si hay Instagram), un banner por perfil con banner (grupo Banners), miniaturas de YouTube (si hay vídeo), mockup de perfil en móvil de la red principal y la página de aplicaciones en el manual |
+| Redes: no o sin respuesta | Sin posts, story, banners ni mockup de perfil. Avatares, OG e iconos se quedan (sirven fuera de redes) |
+| Material impreso | Las piezas pedidas (cartel, folleto, packaging…) en el grupo Papeleria, en PDF con sangrado |
+| Presentaciones frecuentes | Además de la base, separadores y diapositivas extra (datos, cita, equipo) y oferta de un artifact de Slides editable |
+| App o producto digital | Componentes ampliados (navegación, alerta, tabla, modal) y los iconos de app en todos los fondos |
+| Submarcas | Lockup de cada submarca y su color de acento, con su sección en el README y en el manual |
 
 ## Archivos de texto (en `project/`)
 
@@ -15,7 +30,7 @@ Todo el proceso trabaja hacia este resultado. No cambies la estructura salvo que
 | `components/Cover/preview.html` | La portada del sistema (plantilla `portada-ds.html`) |
 | `design-system.json` | El índice: grupos, orden y registro de cada asset. Lo genera `indice.py` y se escribe el último |
 
-## Assets subidos (hasta 7 grupos, en este orden)
+## Assets subidos (grupos, en este orden)
 
 `SIGLA` = abreviatura de la marca (p. ej. `ACME` para «Acme Estudio»). `<tinta>` = color del logo (negro, blanco…); `<fondo>` = cada fondo de marca.
 
@@ -23,21 +38,20 @@ Todo el proceso trabaja hacia este resultado. No cambies la estructura salvo que
 |---|---|---|
 | Logos | `l` | `SIGLA-logo-<tinta>.svg` (una tinta, sin fondo) y su `SIGLA-logo-<tinta>_4000px.png` transparente, por cada tinta · `SIGLA-logo-<tinta>-sobre-<fondo>.svg` (con fondo y zona de respeto) por cada versión de color · `SIGLA-construccion.svg` · `SIGLA-lockup-horizontal-sobre-<fondo>.png`, `SIGLA-lockup-horizontal-<tinta>.png`, `SIGLA-lockup-vertical-<tinta>.png` |
 | Iconos | `m` | `SIGLA-app-icon-<fondo>.svg` y `SIGLA-app-icon-<fondo>_1024.png` por fondo (esquinas al 22,37%) · `favicon.svg` · `apple-touch-icon.png` (180 px) · `android-chrome-512x512.png` |
-| Redes | `l` | `avatar-<fondo>_1000.png` por fondo · `OG-web-compartir_1200x630.png` · `Instagram-post-<formato>_1080x1080.png` por formato recurrente · `Instagram-story_1080x1920.png` · `YouTube-miniatura-<tipo>_1280x720.png` si hay vídeo |
+| Redes | `l` | `avatar-<fondo>_1000.png` por fondo · `OG-web-compartir_1200x630.png` (base) · si hay redes: `Instagram-post-<formato>_1080x1080.png` por formato recurrente · `Instagram-story_1080x1920.png` · `YouTube-miniatura-<tipo>_1280x720.png` si hay vídeo |
 | Banners | `l` | Un banner por cada perfil acordado en H00, con el nombre y el tamaño del catálogo (`banners.py lista`): `YouTube-banner_2560x1440.png` · `X-cabecera_1500x500.png` · `LinkedIn-perfil_1584x396.png` · `LinkedIn-pagina_1512x256.png` · `Facebook-portada_1702x630.png` · `Bluesky-banner_3000x1000.png` · `Twitch-banner_1200x480.png` · `Discord-banner_1920x1080.png` · `Skool-portada_<W>x<H>.png` · `Whop-banner_<W>x<H>.png` · `Pinterest-portada_1920x1080.png` · `Newsletter-cabecera_1200x400.png`. Sin perfiles con banner, el grupo no existe |
-| Patrones | `m` | `SIGLA-patron-<nombre>-<fondo>.svg` sin costuras, en oscuro y claro · `SIGLA-patron-<nombre>-<fondo>_2048.png` · `SIGLA-patron-logos-<fondo>_1920.png` |
-| Mockups | `l` | `mockup-tarjetas_1600x1200.png` · `mockup-pegatinas_1600x1200.png` · `mockup-perfil-<red>-movil_1200x1600.png` · `tarjeta-visita-anverso_90x54mm.png` y `tarjeta-visita-reverso_90x54mm.png` (1063×638 px) |
+| Patrones | `m` | `SIGLA-patron-<nombre>-<fondo>.svg` sin costuras, en oscuro y claro · `SIGLA-patron-<nombre>-<fondo>_2048.png` · `SIGLA-patron-logos-<fondo>_1920.png` · `SIGLA-fondo-<nombre>-<fondo>_1920x1080.png` (fondos de marca para pantallas, vídeo y videollamada, al menos uno claro y uno oscuro) |
+| Mockups | `l` | `mockup-tarjetas_1600x1200.png` · `mockup-pegatinas_1600x1200.png` · `mockup-perfil-<red>-movil_1200x1600.png` (si hay redes) · `tarjeta-visita-anverso_90x54mm.png` y `tarjeta-visita-reverso_90x54mm.png` (1063×638 px) |
 | Manual | `s` | `SIGLA-Manual-de-Marca.pdf` (12–18 páginas, 16:9) |
+| Papeleria | `m` | `SIGLA-membrete-A4.pdf` (`membrete-a4.html`) y su PNG de vista previa · `SIGLA-firma-email_<W>x<H>.png` (`firma-email.html`), con su HTML en un bloque de código dentro del README del grupo · factura, presupuesto o impresos extra si se piden |
+| Presentaciones | `l` | Portada, separador y diapositiva de contenido 16:9 en PNG (`SIGLA-presentacion-<tipo>_1920x1080.png`) y la plantilla completa en PDF. Si quiere una plantilla editable, ofrece aparte un artifact de Slides |
+| OnePager | `m` | `SIGLA-one-pager-A4.pdf` y `SIGLA-one-pager-A4_preview.png` (`one-pager-a4.html`): una hoja A4 vertical que presenta la empresa (titular, qué hace, cómo trabaja, para quién, qué se lleva el cliente y llamada a la acción con contacto). Textos de la plataforma; datos de contacto reales o marcados como ejemplo |
 
 Los nombres con el tamaño al final (`_1080x1080`, `_1000`, `_4000px`) permiten que `render.py` sepa a qué tamaño renderizar y que `indice.py` los ordene. En los banners, además, `banners.py comprobar` reconoce la red por el nombre y comprueba tamaño, proporción y peso.
 
-## Módulos de empresa (opcionales, según el alcance)
+## Componentes UI (base)
 
-| Módulo | Dónde va | Contenido |
-|---|---|---|
-| Papelería | Grupo `Papeleria` (tesela `m`), tras Mockups | Membrete A4 en PDF (`membrete-a4.html`); firma de email en PNG (`firma-email.html`), con su HTML en un bloque de código dentro del README del grupo; plantilla de factura o presupuesto en PDF si la pide |
-| Presentaciones | Grupo `Presentaciones` (tesela `l`) | Portada, separador y diapositiva de contenido 16:9 en PNG, más la plantilla en PDF. Si quiere una plantilla editable, ofrece aparte un artifact de Slides |
-| Componentes UI | `components/<Comp>/README.md` + `preview.html` | Botón, etiqueta, tarjeta y campo de formulario hechos con los tokens; previews estáticos en HTML/CSS. Lee antes `format.md` del tipo Design System |
+`components/<Comp>/README.md` + `preview.html` para botón, etiqueta, tarjeta y campo de formulario, hechos con los tokens, y `components/bundle.css` con sus estilos. Previews estáticos en HTML/CSS. Lee antes `format.md` del tipo Design System. Con app o producto digital, se amplían (ver la tabla de módulos).
 
 ## Fuera del artifact
 
@@ -55,7 +69,9 @@ El almacén de assets no acepta `.ico`, `.zip` ni HTML. Se entrega aparte (carpe
 8. `## Elementos gráficos`: patrón y su regla de uso; estilo de iconos.
 9. `## Piezas incluidas`: lista con tamaños, margen de seguridad, uso de botones y dónde están sus editables.
 10. `## Banners de perfil` (si hay grupo Banners): tabla Red | Archivo | Tamaño | Qué evitar (lo que tapa la interfaz y lo que recorta el móvil), la regla de composición común y qué medidas quedan por verificar en la plataforma.
-11. Una sección por módulo de empresa, si los hay.
+11. `## Papelería, presentación y one pager`: qué hay, qué datos son de ejemplo y dónde están los editables.
+12. Una sección por módulo activado (impresos extra, submarcas, componentes ampliados), si los hay.
+13. `## Pendiente`: lo que falta por decidir o por recibir (respuestas de arranque sin contestar, datos reales, medidas por verificar).
 
 ## README de cada grupo
 

@@ -10,8 +10,8 @@ En los comandos, `$S` = la carpeta `scripts/` de esta skill y `$T` = `templates/
   project/
     README.md  plataforma.md  decisiones.md  tokens.json  design-system.json
     fonts/
-    components/Cover/preview.html
-    assets/Logos/  Iconos/  Redes/  [Banners/]  Patrones/  Mockups/  Manual/  [Papeleria/  Presentaciones/]
+    components/Cover/preview.html  components/<Comp>/  components/bundle.css
+    assets/Logos/  Iconos/  Redes/  [Banners/]  Patrones/  Mockups/  Manual/  Papeleria/  Presentaciones/  OnePager/
   editables/   copias de las plantillas, brand.css, logo.svg, patron.svg y el HTML/SVG de cada pieza
   extra/       favicon.ico, <SIGLA>-brand-kit.zip, renders auxiliares
 ```
@@ -24,7 +24,7 @@ En los comandos, `$S` = la carpeta `scripts/` de esta skill y `$T` = `templates/
 4. **Logos:** escribe los SVG a mano en `project/assets/Logos/`. PNG de 4000 px transparente: `python3 $S/render.py png <logo>.svg <logo>_4000px.png --transparente`.
 5. **Piezas:** copia de `$T` a `editables/` las plantillas que toquen, copia al lado el logo de la tinta adecuada como `logo.svg` (y `logo-negativo.svg`) y el patrón como `patron.svg`, y adapta textos y composición a la marca. Las plantillas son de estructura (zonas seguras, retícula, márgenes), no de estilo: cambia lo que haga falta para que la pieza sea de esta marca.
 6. **Renderizar:** `python3 $S/render.py png editables/<pieza>.html project/assets/Redes/<nombre>_<W>x<H>.png [--param tema=<id>] [--param f=youtube]`. Para muchas piezas, `render.py lote manifiesto.json`. Revisa primero con `--param guias=1` (zonas seguras visibles) y renderiza la versión final sin guías.
-7. **Banners de perfil** (uno por perfil acordado en H00; detalle en «Banners» más abajo):
+7. **Banners de perfil** (solo si hay redes; uno por perfil acordado en H00; detalle en «Banners» más abajo):
    ```bash
    cp $T/banner.html $T/banners-formatos.js editables/      # adapta banner.html a la marca, no toques el catálogo
    python3 $S/banners.py lote --redes youtube,x,linkedin-perfil --plantilla editables/banner.html \
@@ -38,7 +38,11 @@ En los comandos, `$S` = la carpeta `scripts/` de esta skill y `$T` = `templates/
 8. **Iconos:** renderiza `app-icon-1024.html` cuadrado a sangre por fondo (`--param tema=<id>`, con el logo de la tinta que contraste), luego `python3 $S/iconos.py esquinas <cuadrado> project/assets/Iconos/SIGLA-app-icon-<fondo>_1024.png` y `python3 $S/iconos.py derivar <cuadrado> --dir project/assets/Iconos --ico extra/favicon.ico`. El SVG del icono (`SIGLA-app-icon-<fondo>.svg`) y `favicon.svg` se escriben a mano.
 9. **Mockups:** `mockups.html` con `?escena=tarjetas|pegatinas|movil`, usando los renders de la tarjeta y de las piezas como imágenes.
 10. **Manual PDF:** copia `manual.html`, duplica los tipos de página que necesites con el mismo contenido que el README y `python3 $S/render.py pdf editables/manual.html project/assets/Manual/SIGLA-Manual-de-Marca.pdf`. Revisa las páginas (p. ej. `pdftoppm -r 30 -png` si está, o la vista previa del PDF).
-11. **Papelería:** `membrete-a4.html` → PDF con `render.py pdf`; `firma-email.html` con colores en HEX y estilos en línea (los clientes de correo no leen variables CSS ni fuentes web), logo en PNG alojado en una URL pública.
+11. **Papelería** (base): `membrete-a4.html` → PDF con `render.py pdf`; `firma-email.html` con colores en HEX y estilos en línea (los clientes de correo no leen variables CSS ni fuentes web), logo en PNG alojado en una URL pública.
+12. **Presentación** (base): portada, separador y diapositiva de contenido 16:9 a 1920×1080, en PNG y en un PDF con todas.
+13. **One pager** (base): copia `one-pager-a4.html`, rellena los textos desde la plataforma (titular, qué hace, cómo trabaja, para quién, qué se lleva el cliente, llamada a la acción) y `python3 $S/render.py pdf editables/one-pager-a4.html project/assets/OnePager/SIGLA-one-pager-A4.pdf`; la vista previa con `render.py png ... SIGLA-one-pager-A4_preview.png` a 1240×1754. Si no hay datos de contacto reales, márcalos como ejemplo en el README del grupo.
+14. **Fondos 1920×1080** (base): al menos uno claro y uno oscuro, con el patrón o el motivo del logo en una zona y espacio limpio para texto o vídeo, en `Patrones/SIGLA-fondo-<nombre>-<fondo>_1920x1080.png`.
+15. **Componentes UI** (base): botón, etiqueta, tarjeta y campo en `components/<Comp>/` con `preview.html` y `README.md`, y `components/bundle.css` generado desde los tokens.
 
 ## Reglas
 
